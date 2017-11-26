@@ -49,6 +49,7 @@
       - "8888:8888"
     links:
       - "influxdb:influxdb"
+      - "kapacitor:kapacitor"
 
 - name: Kapacitor configuration
   copy:
