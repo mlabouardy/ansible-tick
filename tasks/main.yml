@@ -53,6 +53,8 @@
     image: kapacitor:1.2
     state: started
     restart_policy: always
+    links:
+      - "influxdb:influxdb"
     volumes:
       - "/home/{{remote_user}}/kapacitor.conf:/etc/kapacitor/kapacitor.conf"
 
