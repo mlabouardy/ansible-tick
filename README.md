@@ -16,16 +16,15 @@ None.
 Dependencies
 ------------
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+* [mlabouardy.docker](https://github.com/mlabouardy/ansible-docker)
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
+      remote_user: root
       roles:
-         - { role: username.rolename, x: 42 }
+         - mlabouardy.tick
 
 License
 -------
