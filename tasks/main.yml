@@ -1,4 +1,12 @@
 ---
+- name: InfluxDB configuration
+  copy:
+    src: influxdb.conf
+    dest: "/home/{{remote_user}}/influxdb.conf"
+    owner: "{{remote_user}}"
+    group: "{{remote_user}}"
+    mode: 0644
+
 - name: Setup InfluxDB
   docker_container:
     name: influxdb
@@ -7,6 +15,8 @@
     restart: yes
     ports:
       - "8083:8083"
+    volumes:
+      - "/home/{{remote_user}}/influxdb.conf:/etc/influxdb/influxdb.conf"
 
 - name: Telegraf configuration
   copy:
